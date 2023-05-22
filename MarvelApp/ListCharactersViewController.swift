@@ -8,7 +8,6 @@
 import UIKit
 
 class ListCharactersViewController: UIViewController {
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
