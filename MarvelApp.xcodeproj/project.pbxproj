@@ -60,17 +60,33 @@
 		63797EF62A1AF79B005E0D86 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
-				63797EF72A1AF79B005E0D86 /* AppDelegate.swift */,
-				63797EF92A1AF79B005E0D86 /* SceneDelegate.swift */,
+				63F0DA6F2A1C064500BB26D5 /* Resources */,
+				63F0DA6E2A1C061600BB26D5 /* 📱 */,
 				63797EFB2A1AF79B005E0D86 /* ListCharactersViewController.swift */,
-				63797EFD2A1AF79B005E0D86 /* Main.storyboard */,
-				63797F002A1AF79E005E0D86 /* Assets.xcassets */,
-				63797F022A1AF79E005E0D86 /* LaunchScreen.storyboard */,
-				63797F052A1AF79E005E0D86 /* Info.plist */,
 				63F0DA6A2A1BE65400BB26D5 /* CharactersManager.swift */,
 				63F0DA6C2A1BE99800BB26D5 /* DataCharacter.swift */,
 			);
 			path = MarvelApp;
+			sourceTree = "<group>";
+		};
+		63F0DA6E2A1C061600BB26D5 /* 📱 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "📱";
+			sourceTree = "<group>";
+		};
+		63F0DA6F2A1C064500BB26D5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				63797F052A1AF79E005E0D86 /* Info.plist */,
+				63797F002A1AF79E005E0D86 /* Assets.xcassets */,
+				63797F022A1AF79E005E0D86 /* LaunchScreen.storyboard */,
+				63797EFD2A1AF79B005E0D86 /* Main.storyboard */,
+				63797EF92A1AF79B005E0D86 /* SceneDelegate.swift */,
+				63797EF72A1AF79B005E0D86 /* AppDelegate.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
