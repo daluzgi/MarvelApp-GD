@@ -8,7 +8,12 @@
 import UIKit
 
 class ListCharactersViewController: UIViewController {
-
+    
+    //MARK: - IBOoutlets
+    
+    @IBOutlet weak var tablaCharacters: UITableView!
+    @IBOutlet weak var searchBarCharacters: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
