@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Character: Decodable, Identifiable {
+struct CharacterModel: Decodable, Identifiable {
     let id: Int
     let name: String
     let description: String
