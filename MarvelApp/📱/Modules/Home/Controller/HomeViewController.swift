@@ -63,10 +63,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
 
-//        let data = data[indexPath.item]
-        cell.nameLabel.text = characters[indexPath.row].title
-        //        cell.textLabel.descriptionLabel = characters[indexPath.row].description
-        //        cell.textLabel.image = characters[indexPath.row].path
+        cell.setupCell(character: characters[indexPath.row])
         return cell
     }
 }

@@ -9,11 +9,22 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var imageViewCharacter: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    
+    func setupCell(character: CharacterModel) {
+        nameLabel.text = character.title
+        
+        if let thumbail = character.thumbnail,
+           let imageURL = ImageHelper.getImageURL(thumbnail: thumbail) {
+            imageViewCharacter.loadImage(at: imageURL, placeholder: nil)
+        }
     }
 
 }

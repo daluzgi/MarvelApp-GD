@@ -16,8 +16,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="237" height="156"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xMb-Ku-kRR">
+                        <rect key="frame" x="35" y="34" width="167" height="76"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="167" id="OOG-Ew-qgs"/>
+                            <constraint firstAttribute="height" constant="76" id="dgq-jl-jsl"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IronMan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xn-k2-kAO">
-                        <rect key="frame" x="87.5" y="89.5" width="62" height="21"/>
+                        <rect key="frame" x="87" y="34" width="62" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -28,10 +35,13 @@
             <color key="backgroundColor" red="0.99607843139999996" green="0.58039215690000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="9xn-k2-kAO" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="1st-hz-hGx"/>
-                <constraint firstItem="9xn-k2-kAO" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="ZJk-I3-EJQ"/>
+                <constraint firstItem="xMb-Ku-kRR" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="R9L-K1-gze"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="9xn-k2-kAO" secondAttribute="top" constant="10" id="TxX-6O-NMm"/>
+                <constraint firstItem="xMb-Ku-kRR" firstAttribute="top" secondItem="9xn-k2-kAO" secondAttribute="top" id="pED-2n-3Dx"/>
             </constraints>
             <size key="customSize" width="237" height="156"/>
             <connections>
+                <outlet property="imageViewCharacter" destination="xMb-Ku-kRR" id="hz7-Qb-dTF"/>
                 <outlet property="nameLabel" destination="9xn-k2-kAO" id="zZt-QC-vSF"/>
             </connections>
             <point key="canvasLocation" x="-381.8840579710145" y="117.1875"/>
