@@ -19,6 +19,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         loadCharacters()
+        
+        self.title = "messi"
 
     }
     
