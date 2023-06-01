@@ -17,14 +17,14 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xMb-Ku-kRR">
-                        <rect key="frame" x="35" y="34" width="167" height="76"/>
+                        <rect key="frame" x="35" y="64" width="167" height="76"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="167" id="OOG-Ew-qgs"/>
                             <constraint firstAttribute="height" constant="76" id="dgq-jl-jsl"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IronMan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xn-k2-kAO">
-                        <rect key="frame" x="87" y="34" width="62" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IronMan" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xn-k2-kAO">
+                        <rect key="frame" x="87.5" y="44" width="62" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,12 +32,12 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" red="0.99607843139999996" green="0.58039215690000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="9xn-k2-kAO" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="1st-hz-hGx"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="xMb-Ku-kRR" secondAttribute="top" constant="-20" id="F9K-SH-Aph"/>
                 <constraint firstItem="xMb-Ku-kRR" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="R9L-K1-gze"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="9xn-k2-kAO" secondAttribute="top" constant="10" id="TxX-6O-NMm"/>
-                <constraint firstItem="xMb-Ku-kRR" firstAttribute="top" secondItem="9xn-k2-kAO" secondAttribute="top" id="pED-2n-3Dx"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="9xn-k2-kAO" secondAttribute="top" id="TxX-6O-NMm"/>
             </constraints>
             <size key="customSize" width="237" height="156"/>
             <connections>
