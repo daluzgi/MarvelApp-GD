@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
     fileprivate var characters: [CharacterModel] = []
+    fileprivate var collectionViewDataSource = HomeCollectionViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +28,9 @@ class HomeViewController: UIViewController {
     private func setupCollectionView() {
                 let nibName = UINib(nibName: "HomeCollectionViewCell", bundle: nil)
                 collectionView.register(nibName, forCellWithReuseIdentifier: "HomeCollectionViewCell")
-                
-        //        collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "HomeCollectionViewCell")
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        collectionView.delegate = collectionViewDataSource
+        collectionView.dataSource = collectionViewDataSource
     }
     
     
@@ -43,6 +42,7 @@ class HomeViewController: UIViewController {
             case .success(let charactersResponse):
                 DispatchQueue.main.async {
                     self.characters = charactersResponse.data?.results ?? []
+                    self.collectionViewDataSource.characters = self.characters
                     self.collectionView.reloadData()
                 }
             case .failure(let error):
@@ -53,25 +53,8 @@ class HomeViewController: UIViewController {
     }
 }
 
-//MARK: - CollectionView
-
-extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return characters.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
-
-        cell.setupCell(character: characters[indexPath.row])
-        return cell
-    }
-}
-
-extension HomeViewController: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //Do whatever you need when the user taps on the cell
+extension HomeViewController: HomeCollectionViewDelegate {
+    func didSelectItemAt(indexPath: IndexPath) {
         viewModel.showCharacterDetail()
     }
 }

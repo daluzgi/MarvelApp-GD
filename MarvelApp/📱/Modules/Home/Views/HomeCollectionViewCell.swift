@@ -9,7 +9,8 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!    
+    
     @IBOutlet private weak var imageViewCharacter: UIImageView!
     
     override func awakeFromNib() {
@@ -26,5 +27,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
             imageViewCharacter.loadImage(at: imageURL, placeholder: nil)
         }
     }
-
 }
+
+
