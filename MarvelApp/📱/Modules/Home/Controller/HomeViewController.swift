@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
                 let nibName = UINib(nibName: "HomeCollectionViewCell", bundle: nil)
                 collectionView.register(nibName, forCellWithReuseIdentifier: "HomeCollectionViewCell")
         
+        collectionViewDataSource.delegate = self
         collectionView.delegate = collectionViewDataSource
         collectionView.dataSource = collectionViewDataSource
     }
@@ -55,6 +56,10 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeCollectionViewDelegate {
     func didSelectItemAt(indexPath: IndexPath) {
-        viewModel.showCharacterDetail()
+        guard let navigation = navigationController else {
+            return
+        }
+        
+        viewModel.showCharacterDetail(character: characters[indexPath.row], navigationController: navigation)
     }
 }

@@ -23,6 +23,9 @@
 		63B9B9E72A27FC470025D3B0 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B9E62A27FC470025D3B0 /* UIImageView+URL.swift */; };
 		63B9B9EA2A27FC9A0025D3B0 /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B9E92A27FC9A0025D3B0 /* UIImageLoader.swift */; };
 		63B9B9EC2A2FC3680025D3B0 /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B9EB2A2FC3680025D3B0 /* HomeCollectionViewDataSource.swift */; };
+		63B9B9F42A2FC8500025D3B0 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B9F22A2FC8500025D3B0 /* CharacterDetailViewController.swift */; };
+		63B9B9F52A2FC8500025D3B0 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9B9F32A2FC8500025D3B0 /* CharacterDetailViewController.xib */; };
+		63B9B9F82A2FC9320025D3B0 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9B9F72A2FC9320025D3B0 /* CharacterDetailViewModel.swift */; };
 		63F0DA792A1C0F7700BB26D5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0DA772A1C0F7700BB26D5 /* HomeViewController.swift */; };
 		63F0DA7A2A1C0F7700BB26D5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F0DA782A1C0F7700BB26D5 /* HomeViewController.xib */; };
 		63F0DA7C2A1C0FAE00BB26D5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0DA7B2A1C0FAE00BB26D5 /* HomeViewModel.swift */; };
@@ -50,6 +53,9 @@
 		63B9B9E62A27FC470025D3B0 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		63B9B9E92A27FC9A0025D3B0 /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
 		63B9B9EB2A2FC3680025D3B0 /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		63B9B9F22A2FC8500025D3B0 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		63B9B9F32A2FC8500025D3B0 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
+		63B9B9F72A2FC9320025D3B0 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		63F0DA772A1C0F7700BB26D5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		63F0DA782A1C0F7700BB26D5 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		63F0DA7B2A1C0FAE00BB26D5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -149,6 +155,23 @@
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
+		63B9B9EE2A2FC7A30025D3B0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63B9B9F22A2FC8500025D3B0 /* CharacterDetailViewController.swift */,
+				63B9B9F32A2FC8500025D3B0 /* CharacterDetailViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		63B9B9F62A2FC9080025D3B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63B9B9F72A2FC9320025D3B0 /* CharacterDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		63F0DA6E2A1C061600BB26D5 /* 📱 */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +254,8 @@
 		63F0DA892A1C25FB00BB26D5 /* Character detail */ = {
 			isa = PBXGroup;
 			children = (
+				63B9B9F62A2FC9080025D3B0 /* ViewModel */,
+				63B9B9EE2A2FC7A30025D3B0 /* ViewController */,
 			);
 			path = "Character detail";
 			sourceTree = "<group>";
@@ -296,6 +321,7 @@
 				63F0DA862A1C122200BB26D5 /* HomeCollectionViewCell.xib in Resources */,
 				63797F042A1AF79E005E0D86 /* LaunchScreen.storyboard in Resources */,
 				63797F012A1AF79E005E0D86 /* Assets.xcassets in Resources */,
+				63B9B9F52A2FC8500025D3B0 /* CharacterDetailViewController.xib in Resources */,
 				63F0DA7A2A1C0F7700BB26D5 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +335,7 @@
 			files = (
 				63B9B9DF2A27F2EA0025D3B0 /* MarvelStyles.swift in Sources */,
 				63B9B9D22A1EDE360025D3B0 /* MarvelApiClient.swift in Sources */,
+				63B9B9F42A2FC8500025D3B0 /* CharacterDetailViewController.swift in Sources */,
 				63F0DA7C2A1C0FAE00BB26D5 /* HomeViewModel.swift in Sources */,
 				63B9B9E32A27F3590025D3B0 /* UIFont+Marvel.swift in Sources */,
 				63F0DA7E2A1C0FFC00BB26D5 /* HomeProvider.swift in Sources */,
@@ -323,6 +350,7 @@
 				63B9B9E52A27FA400025D3B0 /* ImageHelper.swift in Sources */,
 				63B9B9EC2A2FC3680025D3B0 /* HomeCollectionViewDataSource.swift in Sources */,
 				63F0DA792A1C0F7700BB26D5 /* HomeViewController.swift in Sources */,
+				63B9B9F82A2FC9320025D3B0 /* CharacterDetailViewModel.swift in Sources */,
 				63B9B9E12A27F3300025D3B0 /* UIColor+Marvel.swift in Sources */,
 				63B9B9DC2A253B720025D3B0 /* URLSession+dataTask.swift in Sources */,
 			);

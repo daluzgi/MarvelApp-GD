@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeViewModel {
     
@@ -17,7 +18,9 @@ class HomeViewModel {
 //    func loadComics() -> [CharacterModel] {
 //    }
     
-    func showCharacterDetail()  {
+    func showCharacterDetail(character: CharacterModel, navigationController: UINavigationController)  {
         //show the module for Character detail
+        let viewController = CharacterDetailViewController(character: character)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
