@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
         setupCollectionView()
         loadCharacters()
         
-        self.title = "messi"
+        self.title = "Marvel"
 
     }
     
