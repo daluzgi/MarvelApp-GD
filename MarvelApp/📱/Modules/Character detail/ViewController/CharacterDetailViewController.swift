@@ -9,6 +9,12 @@ import UIKit
 
 class CharacterDetailViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var characterImageView: UIImageView!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
     private let viewModel = CharacterDetailViewModel()
     let character: CharacterModel?
 
@@ -24,9 +30,18 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupCharacterDetail()
+        
     }
-
-
+    
+    func setupCharacterDetail() {
+        titleLabel.text = character?.title
+        descriptionLabel.text = character?.description
+        
+        if let thumbnail = character?.thumbnail,
+           let imageURL = ImageHelper.getImageURL(thumbnail: thumbnail) {
+            characterImageView.loadImage(at: imageURL, placeholder: nil)
+        }
+    }
 }
+
