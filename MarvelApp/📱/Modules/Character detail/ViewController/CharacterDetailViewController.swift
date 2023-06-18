@@ -38,7 +38,7 @@ class CharacterDetailViewController: UIViewController {
         titleLabel.text = character?.title
         
         if character?.description == "" {
-            descriptionLabel.text = "Description not available"
+            descriptionLabel.text = "Character description is not available"
         } else {
         descriptionLabel.text = character?.description
         }
