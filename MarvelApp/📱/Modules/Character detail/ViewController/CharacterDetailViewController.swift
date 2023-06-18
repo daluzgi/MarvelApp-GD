@@ -36,7 +36,12 @@ class CharacterDetailViewController: UIViewController {
     
     func setupCharacterDetail() {
         titleLabel.text = character?.title
+        
+        if character?.description == "" {
+            descriptionLabel.text = "Description not available"
+        } else {
         descriptionLabel.text = character?.description
+        }
         
         if let thumbnail = character?.thumbnail,
            let imageURL = ImageHelper.getImageURL(thumbnail: thumbnail) {
