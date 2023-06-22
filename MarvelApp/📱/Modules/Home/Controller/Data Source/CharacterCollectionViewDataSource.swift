@@ -12,14 +12,14 @@ protocol HomeCollectionViewDelegate {
     func didSelectItemAt(indexPath: IndexPath)
 }
 
-class HomeCollectionViewDataSource: NSObject {
+class CharacterCollectionViewDataSource: NSObject {
     var characters: [CharacterModel] = []
     var delegate: HomeCollectionViewDelegate?
 }
 
 //MARK: - CollectionView
 
-extension HomeCollectionViewDataSource: UICollectionViewDataSource {
+extension CharacterCollectionViewDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characters.count
     }
@@ -36,7 +36,7 @@ extension HomeCollectionViewDataSource: UICollectionViewDataSource {
     }
 }
 
-extension HomeCollectionViewDataSource: UICollectionViewDelegate {
+extension CharacterCollectionViewDataSource: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //Do whatever you need when the user taps on the cell
@@ -44,7 +44,7 @@ extension HomeCollectionViewDataSource: UICollectionViewDelegate {
     }
 }
 
-extension HomeCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
+extension CharacterCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 237, height: 200)

@@ -11,10 +11,12 @@ class HomeViewController: UIViewController {
     
     
     @IBOutlet weak var collectionView: UICollectionView!
+
+    @IBOutlet weak var comicsCollectionView: UICollectionView!
     
     let viewModel = HomeViewModel()
     fileprivate var characters: [CharacterModel] = []
-    fileprivate var collectionViewDataSource = HomeCollectionViewDataSource()
+    fileprivate var collectionViewDataSource = CharacterCollectionViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
