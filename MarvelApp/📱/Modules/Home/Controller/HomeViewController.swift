@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
     fileprivate var characters: [CharacterModel] = []
-    fileprivate var collectionViewDataSource = CharacterCollectionViewDataSource()
+    fileprivate var collectionViewDataSource = CharactersCollectionViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
