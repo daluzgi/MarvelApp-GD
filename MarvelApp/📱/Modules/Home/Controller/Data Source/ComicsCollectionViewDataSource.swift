@@ -1,27 +1,27 @@
 //
-//  HomeCollectionViewDataSource.swift
+//  ComicsCollectionViewDataSource.swift
 //  MarvelApp
 //
-//  Created by Gigi on 6/6/23.
+//  Created by Gigi on 6/22/23.
 //
 
 import Foundation
 import UIKit
 
-protocol CharactersCollectionViewDelegate {
+protocol ComicsCollectionViewDelegate {
     func didSelectItemAt(indexPath: IndexPath)
 }
 
-class CharactersCollectionViewDataSource: NSObject {
-    var characters: [CharacterModel] = []
-    var delegate: CharactersCollectionViewDelegate?
+class ComicsCollectionViewDataSource: NSObject {
+    var comics: [ComicsModel] = []
+    var delegateComics: ComicsCollectionViewDelegate?
 }
 
 //MARK: - CollectionView
 
-extension CharactersCollectionViewDataSource: UICollectionViewDataSource {
+extension ComicsCollectionViewDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return characters.count
+        return comics.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -31,20 +31,20 @@ extension CharactersCollectionViewDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
 
-        cell.setupCell(character: characters[indexPath.row])
+        cell.setupCell(comic: comics[indexPath.row])
         return cell
     }
 }
 
-extension CharactersCollectionViewDataSource: UICollectionViewDelegate {
+extension ComicsCollectionViewDataSource: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //Do whatever you need when the user taps on the cell
-        delegate?.didSelectItemAt(indexPath: indexPath)
+        delegateComics?.didSelectItemAt(indexPath: indexPath)
     }
 }
 
-extension CharactersCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
+extension ComicsCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 237, height: 200)

@@ -14,9 +14,10 @@ class HomeViewModel {
         HomeProvider.getCharacters(result: result)
     }
     
-    //Next Step
-//    func loadComics() -> [CharacterModel] {
-//    }
+    func loadComics(result: @escaping (Result<ComicsResponse, APIServiceError>) -> Void) {
+        HomeProvider.getComics(result: result)
+    }
+
     
     func showCharacterDetail(character: CharacterModel, navigationController: UINavigationController)  {
         //show the module for Character detail

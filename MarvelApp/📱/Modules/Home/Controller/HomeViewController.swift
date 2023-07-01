@@ -8,32 +8,41 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
-    
-    @IBOutlet weak var collectionView: UICollectionView!
 
-    @IBOutlet weak var comicsCollectionView: UICollectionView!
+    
+    @IBOutlet weak var CharactersCollectionView: UICollectionView!
+    @IBOutlet weak var ComicsCollectionView: UICollectionView!
     
     let viewModel = HomeViewModel()
+    
     fileprivate var characters: [CharacterModel] = []
-    fileprivate var collectionViewDataSource = CharactersCollectionViewDataSource()
+    fileprivate var charactersCollectionViewDataSource = CharactersCollectionViewDataSource()
+    
+    fileprivate var comics: [ComicsModel] = []
+    fileprivate var comicsCollectionViewDataSource = ComicsCollectionViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         loadCharacters()
+        loadComics()
         
         self.title = "Marvel"
-
     }
     
     private func setupCollectionView() {
-                let nibName = UINib(nibName: "HomeCollectionViewCell", bundle: nil)
-                collectionView.register(nibName, forCellWithReuseIdentifier: "HomeCollectionViewCell")
         
-        collectionViewDataSource.delegate = self
-        collectionView.delegate = collectionViewDataSource
-        collectionView.dataSource = collectionViewDataSource
+        let nibName = UINib(nibName: "HomeCollectionViewCell", bundle: nil)
+        CharactersCollectionView.register(nibName, forCellWithReuseIdentifier: "HomeCollectionViewCell")
+        ComicsCollectionView.register(nibName, forCellWithReuseIdentifier: "HomeCollectionViewCell")
+        
+        charactersCollectionViewDataSource.delegate = self
+        CharactersCollectionView.delegate = charactersCollectionViewDataSource
+        CharactersCollectionView.dataSource = charactersCollectionViewDataSource
+        
+        comicsCollectionViewDataSource.delegateComics = self
+        ComicsCollectionView.delegate = comicsCollectionViewDataSource
+        ComicsCollectionView.dataSource = comicsCollectionViewDataSource
     }
     
     
@@ -45,8 +54,8 @@ class HomeViewController: UIViewController {
             case .success(let charactersResponse):
                 DispatchQueue.main.async {
                     self.characters = charactersResponse.data?.results ?? []
-                    self.collectionViewDataSource.characters = self.characters
-                    self.collectionView.reloadData()
+                    self.charactersCollectionViewDataSource.characters = self.characters
+                    self.CharactersCollectionView.reloadData()
                 }
             case .failure(let error):
                 print("Get characteres data has failed from Marvel API")
@@ -54,9 +63,28 @@ class HomeViewController: UIViewController {
         }
         
     }
+    
+    func loadComics() {
+        viewModel.loadComics() { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let comicsResponse):
+                DispatchQueue.main.async {
+                    self.comics = comicsResponse.data?.results ?? []
+                    self.comicsCollectionViewDataSource.comics = self.comics
+                    self.ComicsCollectionView.reloadData()
+                }
+            case .failure(let error):
+                print("Get comics data has failed from Marvel API")
+            }
+        }
+        
+    }
+    
 }
 
-extension HomeViewController: HomeCollectionViewDelegate {
+extension HomeViewController: CharactersCollectionViewDelegate {
     func didSelectItemAt(indexPath: IndexPath) {
         guard let navigation = navigationController else {
             return
@@ -64,4 +92,14 @@ extension HomeViewController: HomeCollectionViewDelegate {
         
         viewModel.showCharacterDetail(character: characters[indexPath.row], navigationController: navigation)
     }
+}
+
+extension HomeViewController: ComicsCollectionViewDelegate {
+//    func didSelectItemAt(indexPath: IndexPath) {
+//        guard let navigation = navigationController else {
+//            return
+//        }
+//
+//        viewModel.showComicsDetail(comic: comics[indexPath.row], navigationController: navigation)
+//    }
 }

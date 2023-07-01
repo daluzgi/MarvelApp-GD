@@ -9,7 +9,7 @@ import Foundation
 
 protocol HomeProviderProtocol {
     static func getCharacters(result: @escaping (Result<MarvelCharactersResponse, APIServiceError>) -> Void)
-//    static func getComics(result: @escaping (Result<MarvelResponse<Comic>, APIServiceError>) -> Void)
+    static func getComics(result: @escaping (Result<ComicsResponse, APIServiceError>) -> Void)
 }
 
 class HomeProvider: HomeProviderProtocol {
@@ -24,8 +24,8 @@ class HomeProvider: HomeProviderProtocol {
        return MarvelAPIClient.fetchResources(url: url, completion: result)
     }
     
-//    static func getComics(result: @escaping (Result<MarvelResponse<Comic>, APIServiceError>) -> Void) {
-//        guard let url = URL(string: Domain.getComics) else { return }
-//       return MarvelAPIClient.fetchResources(url: url, completion: result)
-//    }
+    static func getComics(result: @escaping (Result<ComicsResponse, APIServiceError>) -> Void) {
+        guard let url = URL(string: Domain.getComics) else { return }
+       return MarvelAPIClient.fetchResources(url: url, completion: result)
+    }
 }

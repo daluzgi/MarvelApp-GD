@@ -27,14 +27,14 @@ class HomeCollectionViewCell: UICollectionViewCell {
         }
     }
     
-//    func setupCell(comic: ComicsModel) {
-//        nameLabel.text = character.title
-//
-//        if let thumbnail = character.thumbnail,
-//           let imageURL = ImageHelper.getImageURL(thumbnail: thumbnail) {
-//            imageViewCharacter.loadImage(at: imageURL, placeholder: nil)
-//        }
-//    }
+    func setupCell(comic: ComicsModel) {
+        nameLabel.text = comic.title
+
+        if let thumbnail = comic.thumbnail,
+           let imageURL = ImageHelper.getImageURL(thumbnail: thumbnail) {
+            imageViewCharacter.loadImage(at: imageURL, placeholder: nil)
+        }
+    }
     
 }
 

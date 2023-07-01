@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MarvelApp" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="A5D-eG-ina" id="CxV-nf-jmp"/>
-                <outlet property="comicsCollectionView" destination="ssS-3Z-l4p" id="LYo-Ck-VKt"/>
+                <outlet property="CharactersCollectionView" destination="A5D-eG-ina" id="CxV-nf-jmp"/>
+                <outlet property="ComicsCollectionView" destination="ssS-3Z-l4p" id="LYo-Ck-VKt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,7 +39,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="Shl-7n-cEH"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U8O-77-oCW">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U8O-77-oCW">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
