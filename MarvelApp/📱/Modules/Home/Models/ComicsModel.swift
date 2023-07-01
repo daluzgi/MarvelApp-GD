@@ -15,7 +15,7 @@ struct ComicsModel: HomeItem {
     
     enum CodingKeys: String, CodingKey {
         case id
-        case title = "name"
+        case title
         case description
         case thumbnail
     }
