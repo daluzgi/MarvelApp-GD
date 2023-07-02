@@ -100,6 +100,6 @@ extension HomeViewController: ComicsCollectionViewDelegate {
 //            return
 //        }
 //
-//        viewModel.showComicsDetail(comic: comics[indexPath.row], navigationController: navigation)
+//        viewModel.showComicDetail(comic: comics[indexPath.row], navigationController: navigation)
 //    }
 }

@@ -19,9 +19,14 @@ class HomeViewModel {
     }
 
     
-    func showCharacterDetail(character: CharacterModel, navigationController: UINavigationController)  {
+    func showCharacterDetail(character: CharacterModel, navigationController: UINavigationController) {
         //show the module for Character detail
         let viewController = CharacterDetailViewController(character: character)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func showComicDetail(comic: ComicsModel, navigationController: UINavigationController) {
+        let viewController = ComicDetailViewController(comic: comic)
         navigationController.pushViewController(viewController, animated: true)
     }
 }
