@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 protocol ComicsCollectionViewDelegate {
-    func didSelectItemAt(indexPath: IndexPath)
+    func didSelectComicItemAt(indexPath: IndexPath)
 }
 
 class ComicsCollectionViewDataSource: NSObject {
     var comics: [ComicsModel] = []
-    var delegateComics: ComicsCollectionViewDelegate?
+    var delegate: ComicsCollectionViewDelegate?
 }
 
 //MARK: - CollectionView
@@ -40,7 +40,7 @@ extension ComicsCollectionViewDataSource: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //Do whatever you need when the user taps on the cell
-        delegateComics?.didSelectItemAt(indexPath: indexPath)
+        delegate?.didSelectComicItemAt(indexPath: indexPath)
     }
 }
 
