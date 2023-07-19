@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetailViewController" customModule="MarvelApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemDetailViewController" customModule="MarvelApp" customModuleProvider="target">
             <connections>
-                <outlet property="characterImageView" destination="E3p-jy-rhe" id="YIa-f6-kE0"/>
                 <outlet property="descriptionLabel" destination="WKd-WP-bmT" id="trE-4b-Mso"/>
+                <outlet property="itemImageView" destination="E3p-jy-rhe" id="Ddr-yt-zWX"/>
                 <outlet property="titleLabel" destination="Meq-nr-zme" id="8WF-cR-u3g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
