@@ -95,11 +95,11 @@ extension HomeViewController: CharactersCollectionViewDelegate {
 }
 
 extension HomeViewController: ComicsCollectionViewDelegate {
-//    func didSelectItemAt(indexPath: IndexPath) {
-//        guard let navigation = navigationController else {
-//            return
-//        }
-//
-//        viewModel.showComicDetail(comic: comics[indexPath.row], navigationController: navigation)
-//    }
+    func didSelectComicAt(indexPath: IndexPath) {
+        guard let navigation = navigationController else {
+            return
+        }
+
+        viewModel.showComicDetail(comic: comics[indexPath.row], navigationController: navigation)
+    }
 }
