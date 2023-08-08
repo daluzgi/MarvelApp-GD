@@ -17,5 +17,5 @@ struct ComicsByCharacterData: Pagination, Decodable {
     var limit: Int?
     var total: Int?
     var count: Int?
-    let results: [ComicsByCharacterModel]?
+    let results: [ComicsModel]?
 }

@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemDetailViewController" customModule="MarvelApp" customModuleProvider="target">
             <connections>
                 <outlet property="descriptionLabel" destination="WKd-WP-bmT" id="trE-4b-Mso"/>
+                <outlet property="itemCollectionView" destination="kEb-el-6qn" id="f9G-QL-3z7"/>
                 <outlet property="itemImageView" destination="E3p-jy-rhe" id="Ddr-yt-zWX"/>
                 <outlet property="titleLabel" destination="Meq-nr-zme" id="8WF-cR-u3g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -51,7 +52,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="200" id="glP-e5-TAX"/>
                                     </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uN7-v2-rYS">
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uN7-v2-rYS">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>

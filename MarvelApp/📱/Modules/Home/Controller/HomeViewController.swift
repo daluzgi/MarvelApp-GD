@@ -43,6 +43,7 @@ class HomeViewController: UIViewController {
         comicsCollectionViewDataSource.delegateComics = self
         ComicsCollectionView.delegate = comicsCollectionViewDataSource
         ComicsCollectionView.dataSource = comicsCollectionViewDataSource
+        
     }
     
     func loadCharacters() {

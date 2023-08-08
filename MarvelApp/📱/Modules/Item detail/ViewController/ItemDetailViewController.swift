@@ -20,9 +20,12 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    @IBOutlet weak var itemCollectionView: UICollectionView!
     
     private let viewModel = ItemDetailViewModel()
     let item: ItemDetailModel?
+    fileprivate var comics: [ComicsModel] = []
+    fileprivate var itemCollectionViewDataSource = ComicsCollectionViewDataSource()
 
     init(item: ItemDetailModel) {
         self.item = item
@@ -38,13 +41,39 @@ class ItemDetailViewController: UIViewController {
         super.viewDidLoad()
         setupItemDetail()
         getComics()
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
+        
+        let nibName = UINib(nibName: "ItemCollectionViewCell", bundle: nil)
+        itemCollectionView.register(nibName, forCellWithReuseIdentifier: "ItemCollectionViewCell")
+        
+        //itemCollectionViewDataSource.delegateComics = self
+        itemCollectionView.delegate = itemCollectionViewDataSource
+        itemCollectionView.dataSource = itemCollectionViewDataSource
+    
     }
     
     private func getComics() {
         if let characterID = item?.characterID {
-            viewModel.getComics(characterID: characterID)
+            viewModel.getComics(characterID: characterID) { [weak self] result in
+                guard let self = self else { return }
+                
+                switch result {
+                case .success(let comicsByCharacterResponse):
+                    DispatchQueue.main.async {
+                        self.comics = comicsByCharacterResponse.data?.results ?? []
+                        self.itemCollectionViewDataSource.comics = self.comics
+                        self.itemCollectionView.reloadData()
+                    }
+                case .failure(let error):
+                    print("Get comics by character ID data has failed from Marvel API")
+                }
+            }
             
-            ///once the method above returns the comics, you have to inject that data inside the data source of the collection view
+            
+            
             
             
         }
