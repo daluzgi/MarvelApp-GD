@@ -1,5 +1,5 @@
 //
-//  HomeCollectionViewCell.swift
+//  ItemCollectionViewCell.swift
 //  MarvelApp
 //
 //  Created by Gigi on 5/22/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
+class ItemCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var nameLabel: UILabel!    
     @IBOutlet private weak var imageViewCell: UIImageView!

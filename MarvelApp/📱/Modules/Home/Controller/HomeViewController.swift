@@ -32,9 +32,9 @@ class HomeViewController: UIViewController {
     
     private func setupCollectionView() {
         
-        let nibName = UINib(nibName: "HomeCollectionViewCell", bundle: nil)
-        CharactersCollectionView.register(nibName, forCellWithReuseIdentifier: "HomeCollectionViewCell")
-        ComicsCollectionView.register(nibName, forCellWithReuseIdentifier: "HomeCollectionViewCell")
+        let nibName = UINib(nibName: "ItemCollectionViewCell", bundle: nil)
+        CharactersCollectionView.register(nibName, forCellWithReuseIdentifier: "ItemCollectionViewCell")
+        ComicsCollectionView.register(nibName, forCellWithReuseIdentifier: "ItemCollectionViewCell")
         
         charactersCollectionViewDataSource.delegate = self
         CharactersCollectionView.delegate = charactersCollectionViewDataSource
