@@ -11,13 +11,13 @@ struct ItemDetailModel {
     let title: String?
     let description: String?
     let thumbnail: Thumbnail?
+    let characterID: Int?
 }
 
 class ItemDetailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var itemImageView: UIImageView!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
     
     
@@ -37,14 +37,24 @@ class ItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupItemDetail()
-        
+        getComics()
+    }
+    
+    private func getComics() {
+        if let characterID = item?.characterID {
+            viewModel.getComics(characterID: characterID)
+            
+            ///once the method above returns the comics, you have to inject that data inside the data source of the collection view
+            
+            
+        }
     }
     
     func setupItemDetail() {
         titleLabel.text = item?.title
         
         if item?.description == "" {
-            descriptionLabel.text = "Character description is not available"
+            descriptionLabel.text = "Description is not available"
         } else {
             descriptionLabel.text = item?.description
         }

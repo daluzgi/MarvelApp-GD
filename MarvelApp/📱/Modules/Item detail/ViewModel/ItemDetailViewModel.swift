@@ -8,5 +8,7 @@
 import Foundation
 
 class ItemDetailViewModel {
-    
+    func getComics(characterID: Int) {
+        //LLamar al APIcall para obtener los comics del character
+    }
 }

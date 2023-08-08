@@ -45,7 +45,6 @@ class HomeViewController: UIViewController {
         ComicsCollectionView.dataSource = comicsCollectionViewDataSource
     }
     
-    
     func loadCharacters() {
         viewModel.loadCharacters { [weak self] result in
             guard let self = self else { return }

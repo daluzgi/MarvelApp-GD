@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arE-3z-msM" userLabel="Container View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="551.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="771.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Meq-nr-zme" userLabel="Title Label">
                                     <rect key="frame" x="20" y="40" width="374" height="36"/>
@@ -45,15 +45,31 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kEb-el-6qn">
+                                    <rect key="frame" x="20" y="551.5" width="374" height="200"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="glP-e5-TAX"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uN7-v2-rYS">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="WKd-WP-bmT" firstAttribute="leading" secondItem="arE-3z-msM" secondAttribute="leading" constant="20" id="3XF-R9-x7F"/>
+                                <constraint firstItem="kEb-el-6qn" firstAttribute="leading" secondItem="arE-3z-msM" secondAttribute="leading" constant="20" id="7V7-n0-1Bq"/>
+                                <constraint firstAttribute="bottom" secondItem="kEb-el-6qn" secondAttribute="bottom" constant="20" id="BLg-C1-Zfc"/>
                                 <constraint firstAttribute="trailing" secondItem="Meq-nr-zme" secondAttribute="trailing" constant="20" id="FEf-cs-if9"/>
                                 <constraint firstAttribute="trailing" secondItem="E3p-jy-rhe" secondAttribute="trailing" constant="20" id="HkN-Vk-PhE"/>
-                                <constraint firstAttribute="bottom" secondItem="WKd-WP-bmT" secondAttribute="bottom" constant="20" id="QfH-tC-T89"/>
+                                <constraint firstItem="WKd-WP-bmT" firstAttribute="bottom" secondItem="kEb-el-6qn" secondAttribute="top" constant="-20" id="Q1O-J1-l7B"/>
                                 <constraint firstItem="Meq-nr-zme" firstAttribute="leading" secondItem="arE-3z-msM" secondAttribute="leading" constant="20" id="TR2-Jc-0pI"/>
                                 <constraint firstItem="E3p-jy-rhe" firstAttribute="leading" secondItem="arE-3z-msM" secondAttribute="leading" constant="20" id="W2V-Un-iW8"/>
+                                <constraint firstAttribute="trailing" secondItem="kEb-el-6qn" secondAttribute="trailing" constant="20" id="cTp-iZ-YrG"/>
                                 <constraint firstAttribute="trailing" secondItem="WKd-WP-bmT" secondAttribute="trailing" constant="20" id="ngv-DS-lV6"/>
                                 <constraint firstItem="WKd-WP-bmT" firstAttribute="top" secondItem="E3p-jy-rhe" secondAttribute="bottom" constant="20" id="nrX-6Z-2Sy"/>
                                 <constraint firstItem="E3p-jy-rhe" firstAttribute="top" secondItem="Meq-nr-zme" secondAttribute="bottom" constant="15" id="sxK-b4-eYp"/>

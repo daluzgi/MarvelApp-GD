@@ -10,11 +10,15 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var nameLabel: UILabel!    
-    @IBOutlet private weak var imageViewCharacter: UIImageView!
+    @IBOutlet private weak var imageViewCell: UIImageView!
     
+    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        imageViewCell.layer.cornerRadius = 8.0
+        imageViewCell.clipsToBounds = true
     }
     
     
@@ -23,7 +27,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
         if let thumbnail = character.thumbnail,
            let imageURL = ImageHelper.getImageURL(thumbnail: thumbnail) {
-            imageViewCharacter.loadImage(at: imageURL, placeholder: nil)
+            imageViewCell.loadImage(at: imageURL, placeholder: nil)
         }
     }
     
@@ -32,7 +36,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
 
         if let thumbnail = comic.thumbnail,
            let imageURL = ImageHelper.getImageURL(thumbnail: thumbnail) {
-            imageViewCharacter.loadImage(at: imageURL, placeholder: nil)
+            imageViewCell.loadImage(at: imageURL, placeholder: nil)
         }
     }
     

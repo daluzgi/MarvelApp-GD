@@ -20,13 +20,13 @@ class HomeViewModel {
 
     //show the module for Item detail
     func showCharacterDetail(character: CharacterModel, navigationController: UINavigationController) {
-        let item = ItemDetailModel(title: character.title, description: character.description, thumbnail: character.thumbnail)
+        let item = ItemDetailModel(title: character.title, description: character.description, thumbnail: character.thumbnail, characterID: character.id)
         let viewController = ItemDetailViewController(item: item)
         navigationController.pushViewController(viewController, animated: true)
     }
     
     func showComicDetail(comic: ComicsModel, navigationController: UINavigationController) {
-        let item = ItemDetailModel(title: comic.title, description: comic.description, thumbnail: comic.thumbnail)
+        let item = ItemDetailModel(title: comic.title, description: comic.description, thumbnail: comic.thumbnail, characterID: nil)
         let viewController = ItemDetailViewController(item: item)
         navigationController.pushViewController(viewController, animated: true)
     }
