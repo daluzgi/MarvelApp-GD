@@ -71,11 +71,6 @@ class ItemDetailViewController: UIViewController {
                     print("Get comics by character ID data has failed from Marvel API")
                 }
             }
-            
-            
-            
-            
-            
         }
     }
     

@@ -12,15 +12,13 @@ class ItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var nameLabel: UILabel!    
     @IBOutlet private weak var imageViewCell: UIImageView!
     
-    
-        
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         
         imageViewCell.layer.cornerRadius = 8.0
         imageViewCell.clipsToBounds = true
     }
-    
     
     func setupCell(character: CharacterModel) {
         nameLabel.text = character.title
@@ -39,7 +37,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
             imageViewCell.loadImage(at: imageURL, placeholder: nil)
         }
     }
-    
 }
 
 
