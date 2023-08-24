@@ -8,18 +8,18 @@
 import Foundation
 import UIKit
 
-protocol ComicsCollectionViewDelegate {
+protocol ItemsCollectionViewDelegate {
     func didSelectComicAt(indexPath: IndexPath)
 }
 
-class ComicsCollectionViewDataSource: NSObject {
+class ItemsCollectionViewDataSource: NSObject {
     var comics: [ComicsModel] = []
-    var delegateComics: ComicsCollectionViewDelegate?
+    var delegateComics: ItemsCollectionViewDelegate?
 }
 
 //MARK: - CollectionView
 
-extension ComicsCollectionViewDataSource: UICollectionViewDataSource {
+extension ItemsCollectionViewDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return comics.count
     }
@@ -36,7 +36,7 @@ extension ComicsCollectionViewDataSource: UICollectionViewDataSource {
     }
 }
 
-extension ComicsCollectionViewDataSource: UICollectionViewDelegate {
+extension ItemsCollectionViewDataSource: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //Do whatever you need when the user taps on the cell
@@ -44,10 +44,10 @@ extension ComicsCollectionViewDataSource: UICollectionViewDelegate {
     }
 }
 
-extension ComicsCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
+extension ItemsCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 300)
+        return CGSize(width: 250, height: 250)
         
     }
 }

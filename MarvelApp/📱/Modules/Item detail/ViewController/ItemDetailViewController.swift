@@ -25,7 +25,7 @@ class ItemDetailViewController: UIViewController {
     private let viewModel = ItemDetailViewModel()
     let item: ItemDetailModel?
     fileprivate var comics: [ComicsModel] = []
-    fileprivate var itemCollectionViewDataSource = ComicsCollectionViewDataSource()
+    fileprivate var itemCollectionViewDataSource = ItemsCollectionViewDataSource()
 
     init(item: ItemDetailModel) {
         self.item = item

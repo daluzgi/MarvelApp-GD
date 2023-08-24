@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     fileprivate var charactersCollectionViewDataSource = CharactersCollectionViewDataSource()
     
     fileprivate var comics: [ComicsModel] = []
-    fileprivate var comicsCollectionViewDataSource = ComicsCollectionViewDataSource()
+    fileprivate var comicsCollectionViewDataSource = ItemsCollectionViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,6 @@ class HomeViewController: UIViewController {
         comicsCollectionViewDataSource.delegateComics = self
         ComicsCollectionView.delegate = comicsCollectionViewDataSource
         ComicsCollectionView.dataSource = comicsCollectionViewDataSource
-        
     }
     
     func loadCharacters() {
@@ -61,7 +60,6 @@ class HomeViewController: UIViewController {
                 print("Get characteres data has failed from Marvel API")
             }
         }
-        
     }
     
     func loadComics() {
@@ -79,9 +77,7 @@ class HomeViewController: UIViewController {
                 print("Get comics data has failed from Marvel API")
             }
         }
-        
     }
-    
 }
 
 extension HomeViewController: CharactersCollectionViewDelegate {
@@ -94,7 +90,7 @@ extension HomeViewController: CharactersCollectionViewDelegate {
     }
 }
 
-extension HomeViewController: ComicsCollectionViewDelegate {
+extension HomeViewController: ItemsCollectionViewDelegate {
     func didSelectComicAt(indexPath: IndexPath) {
         guard let navigation = navigationController else {
             return

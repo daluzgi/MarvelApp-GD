@@ -47,7 +47,7 @@ extension CharactersCollectionViewDataSource: UICollectionViewDelegate {
 extension CharactersCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 300)
+        return CGSize(width: 250, height: 250)
         
     }
 }
