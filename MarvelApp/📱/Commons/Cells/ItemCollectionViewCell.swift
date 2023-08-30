@@ -30,7 +30,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCell(comic: ComicsModel) {
-        nameLabel.text = comic.title
+        nameLabel.text = comic.title ?? "No title"
 
         if let thumbnail = comic.thumbnail,
            let imageURL = ImageHelper.getImageURL(thumbnail: thumbnail) {

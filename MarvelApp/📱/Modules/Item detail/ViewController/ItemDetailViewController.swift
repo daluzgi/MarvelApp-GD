@@ -49,7 +49,6 @@ class ItemDetailViewController: UIViewController {
         let nibName = UINib(nibName: "ItemCollectionViewCell", bundle: nil)
         itemCollectionView.register(nibName, forCellWithReuseIdentifier: "ItemCollectionViewCell")
         
-        //itemCollectionViewDataSource.delegateComics = self
         itemCollectionView.delegate = itemCollectionViewDataSource
         itemCollectionView.dataSource = itemCollectionViewDataSource
     
